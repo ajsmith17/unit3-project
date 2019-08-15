@@ -1,0 +1,19 @@
+{
+  "name": "unit3-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajsmith17/unit3-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajsmith17/unit3-project/issues"
+  },
+  "homepage": "https://github.com/ajsmith17/unit3-project#readme"
+}
