@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/ajsmith17/unit3-project/issues"
   },
-  "homepage": "https://github.com/ajsmith17/unit3-project#readme"
+  "homepage": "https://github.com/ajsmith17/unit3-project#readme",
+  "dependencies": {}
 }
