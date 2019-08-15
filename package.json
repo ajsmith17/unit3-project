@@ -16,5 +16,11 @@
     "url": "https://github.com/ajsmith17/unit3-project/issues"
   },
   "homepage": "https://github.com/ajsmith17/unit3-project#readme",
-  "dependencies": {}
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-sessions": "^1.0.6",
+    "mongoose": "^5.6.9"
+  }
 }
