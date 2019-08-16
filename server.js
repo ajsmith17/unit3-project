@@ -19,6 +19,10 @@ app.use(express.static('public'));
 const PROJECT3_DB = process.env.PROJECT3_DB
 
 // Error / success
+mongoose.connect('mongodb://localhost:27017/cities', {useNewUrlParser:true});
+mongoose.connection.once('open', () => {
+  console.log('connected to mongoose...');
+})
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', PROJECT3_DB));
 db.on('disconnected', () => console.log('mongo disconnected'));

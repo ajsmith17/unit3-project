@@ -14,12 +14,10 @@
         ng-model="ctrl.description" placeholder="description"/>
         <input type="text"
         ng-model="ctrl.image" placeholder="image"/>
-        Complete: <input type="checkbox"
-        ng-model="ctrl.complete"/>
         <input type="submit"
-        value="Create New To Do Post"/>
+        value="Create New Post"/>
       </form>
-      <div ng-repeat="city in ctrl.city">
+      <div ng-repeat="city in ctrl.cities">
         {{city.name}}
       </div>
 
