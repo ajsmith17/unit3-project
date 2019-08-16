@@ -3,10 +3,23 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nunito|Oswald|Oxygen&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
     <meta charset="utf-8">
     <title></title>
   </head>
+  <header>
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+        <li id="login">login</li>
+        <li id="logout">logout</li>
+      </ul>
+    </nav>
+  </header>
   <body ng-controller="MyController as ctrl">
     <div class="section">
 
@@ -24,7 +37,7 @@
         <div class="video-container">
             <div class="color-overlay"></div>
             <video autoplay loop muted>
-                <source src="assets/IMG_8491.mp4" type="video/mp4">
+                <source src="assets/IMG_8526.mp4" type="video/mp4">
             </video>
         </div>
 
