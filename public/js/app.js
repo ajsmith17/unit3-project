@@ -104,7 +104,7 @@ app.controller('MyController', ['$http', function($http){
       method: 'DELETE',
       url: '/cities/' + cities._id
     }).then(function(response){
-      controller.getCities();
+       controller.getCities();
     }, function(error){
       console.log(error);
     });
