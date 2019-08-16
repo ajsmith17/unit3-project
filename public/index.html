@@ -3,23 +3,36 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
     <script src="/js/app.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="main.css">
     <meta charset="utf-8">
     <title></title>
   </head>
   <body ng-controller="MyController as ctrl">
-    <form ng-submit="ctrl.addCity()">
-        <input type="text"
-        ng-model="ctrl.name" placeholder="name"/>
-        <input type="text"
-        ng-model="ctrl.description" placeholder="description"/>
-        <input type="text"
-        ng-model="ctrl.image" placeholder="image"/>
-        <input type="submit"
-        value="Create New Post"/>
-      </form>
-      <div ng-repeat="city in ctrl.cities">
-        {{city.name}}
-      </div>
+    <div class="section">
+
+      <form ng-submit="ctrl.addCity()">
+          <input type="text"
+          ng-model="ctrl.name" placeholder="name"/>
+          <input type="text"
+          ng-model="ctrl.description" placeholder="description"/>
+          <input type="text"
+          ng-model="ctrl.image" placeholder="image"/>
+          <input type="submit"
+          value="Create New Post"/>
+        </form>
+        <div ng-repeat="city in ctrl.cities">
+          {{city.name}}
+        </div>
+
+        <div class="video-container">
+            <div class="color-overlay"></div>
+            <video autoplay loop muted>
+                <source src="assets/IMG_8491.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
 
   </body>
 </html>
