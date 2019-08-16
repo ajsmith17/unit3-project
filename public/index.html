@@ -20,9 +20,6 @@
           <input type="submit"
           value="Create New Post"/>
         </form>
-        <div ng-repeat="city in ctrl.cities">
-          {{city.name}}
-        </div>
 
         <div class="video-container">
             <div class="color-overlay"></div>
@@ -32,7 +29,9 @@
         </div>
 
     </div>
-
-
+    <div ng-repeat="city in ctrl.cities">
+      {{city.name}}
+      {{city.description}}
+    </div>
   </body>
 </html>
