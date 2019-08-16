@@ -34,4 +34,4 @@ router.put('/', (req, res) => {
   });
 });
 
-module.express = router;
+module.exports = router;
