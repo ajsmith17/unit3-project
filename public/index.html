@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" ng-app="MyApp">
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
-    <script src="/js/app.js" charset="utf-8"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nunito|Oswald|Oxygen&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/jpeg" href="assets/favicon.jpeg">
-    <link rel="stylesheet" href="main.css">
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <header>
-    <nav>
-      <ul>
-        <li>home</li>
-        <li>about</li>
-        <li>contact</li>
-        <li id="login">login</li>
-        <li id="logout">logout</li>
-      </ul>
-    </nav>
-  </header>
-  <body ng-controller="MyController as ctrl">
-    <div class="section">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+  <script src="/js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nunito|Oswald|Oxygen&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/jpeg" href="assets/favicon.jpeg">
+  <link rel="stylesheet" href="main.css">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<header>
+  <img src="assets/logo.png" alt="logo">
+  <nav>
+    <ul>
+      <li>home</li>
+      <li>about</li>
+      <li>contact</li>
+      <li id="login">login</li>
+      <li id="logout">logout</li>
+    </ul>
+  </nav>
+</header>
+<body ng-controller="MyController as ctrl">
+  <div class="section">
 
-      <form ng-submit="ctrl.addCity()">
-          <input type="text"
-          ng-model="ctrl.name" placeholder="name"/>
-          <textarea type="text"
-          ng-model="ctrl.description" placeholder="description" rows="10" cols="80"/></textarea>
-          <input type="text"
-          ng-model="ctrl.image" placeholder="image"/>
-          <input type="submit"
-          value="Create New Post"/>
-        </form>
+    <form ng-submit="ctrl.addCity()">
+      <input type="text"
+      ng-model="ctrl.name" placeholder="name"/>
+      <input type="text"
+      ng-model="ctrl.image" placeholder="image"/>
+      <textarea type="text"
+      ng-model="ctrl.description" placeholder="description" rows="10" cols="80"/></textarea>
 
-        <div class="video-container">
-            <div class="color-overlay"></div>
-            <video autoplay loop muted>
-                <source src="assets/IMG_8526.mp4" type="video/mp4">
-            </video>
-        </div>
+      <input type="submit"
+      value="Create New Post"/>
+    </form>
+
+    <div class="video-container">
+      <div class="color-overlay"></div>
+      <video autoplay loop muted>
+        <source src="assets/IMG_8526.mp4" type="video/mp4">
+        </video>
+      </div>
 
     </div>
-    <div ng-repeat="city in ctrl.cities">
-      {{city.name}}
-      {{city.description}}
+    <div class="card">
+      <div class="sidebar"><img src="{{city.image}}" alt="image"></div>
+      <div class="text">
+
+
+        <div ng-repeat="city in ctrl.cities">
+          <h3>{{city.name}}</h3>
+          <h4>{{city.description}}</h4>
+        </div>
+      </div>
     </div>
   </body>
-</html>
+  <footer>
+    <ul>
+      <li>that guy</li>
+      <li>•</li>
+      <li>the better aaron</li>
+      <li>•</li>
+      <li>bug sniffah</li>
+    </ul>
+  </footer>
+  </html>
