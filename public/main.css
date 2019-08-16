@@ -138,11 +138,12 @@ input[type="submit"] {
   outline: none;
 }
 
-.container {
+.card {
   width: 80vw;
   height: 70vw;
   margin: 50px auto;
   display: flex;
+  border-top: 2px solid var(--blue);
 }
 .sidebar {
   background-size: cover;
