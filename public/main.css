@@ -38,7 +38,7 @@ header li a {
     text-decoration: none;
 }
 
-li:hover {
+header li:hover {
   border-bottom: 1px solid black;
 }
 
@@ -139,18 +139,23 @@ input[type="submit"] {
 }
 
 .card {
-  width: 80vw;
-  height: 70vw;
+  width: 65%;
+  height: 100%;
   margin: 50px auto;
   display: flex;
+}
+.bar {
+  width: 85%;
+  margin: auto;
   border-top: 2px solid var(--blue);
 }
+
 .sidebar {
   background-size: cover;
   background-repeat: no-repeat;
 }
 .text {
-  width: 50%;
+  width: 57%;
   background-color: var(--cru);
   border-radius: 0 10px 10px 0;
   padding: 15px;
@@ -171,6 +176,11 @@ h4 {
   color: var(--blue);
 }
 
+li img {
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
 
 footer {
   background-color: var(--gold);
@@ -178,20 +188,31 @@ footer {
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
+  height: 80px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
   box-shadow: 0 0 25px 0 black;
   opacity: .6;
 }
-footer * {
+
+footer ul {
     display: inline;
+    display: flex;
+    justify-content: center;
 }
 
 footer li {
-    margin: 15px;
+    margin: 12px;
+    font-size: 12px;
     font-family: 'Oxygen'
+}
+
+footer img {
+    justify-content: center;
+    transform: translate(517px);
+    height: 35px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
 }
 
 footer li a {
