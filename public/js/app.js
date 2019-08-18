@@ -99,29 +99,29 @@ app.controller('MyController', ['$http', function($http){
     });
   };
   // Delete City
-  this.deleteCity = function(){
+  this.deleteCity = function(city){
     $http({
       method: 'DELETE',
-      url: '/cities/' + cities._id
+      url: '/cities/' + city._id
     }).then(function(response){
        controller.getCities();
     }, function(error){
-      console.log(error);
+      // console.log(error);
     });
   };
   // Update City
-  this.editCity = function(){
+  this.editCity = function(city){
     $http({
       method: 'PUT',
-      url: '/cities/' + cities._id,
+      url: '/cities/' + city._id,
       data: {
         name: this.updatedCityName,
         description: this.updatedCityDescription,
-        image: this.uodatedCityImage
+        image: this.updatedCityImage
       }
     }).then(function(response){
       controller.getCities();
-      controller.indexOfCurrentEdit = null;
+      controller.indexOfEditFormToShow = null;
     });
   };
   this.getCities();
