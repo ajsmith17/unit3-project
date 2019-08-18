@@ -22,13 +22,13 @@ router.post('/', (req, res) => {
   });
 });
 // Delete Route
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
   Cities.findByIdAndRemove(req.params.id, (err, deletedCity) => {
     res.json(deletedCity);
   });
 });
 //  Edit Route
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
   Cities.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedCity) => {
     res.json(updatedCity);
   });
