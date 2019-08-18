@@ -124,5 +124,6 @@ app.controller('MyController', ['$http', function($http){
       controller.indexOfEditFormToShow = null;
     });
   };
+
   this.getCities();
   }]);

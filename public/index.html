@@ -65,7 +65,7 @@
           ng-if="$index !== ctrl.indexOfEditFormToShow"
           href="#"
           ng-click="ctrl.indexOfEditFormToShow = $index">
-        <!-- <i class='fas fa-pen'> </i> -->
+        <i class='fas fa-pen'> </i>
           </a>
           <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);">
             <input type="text"
