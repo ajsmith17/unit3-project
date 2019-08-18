@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="MyApp">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+  <script src="/js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nunito|Oswald|Oxygen&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="image/jpeg" href="assets/favicon.jpeg">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<header>
+  <img src="assets/logo.png" alt="logo">
+  <nav>
+    <ul>
+      <li>home</li>
+      <li>about</li>
+      <li>contact</li>
+      <li id="login">login</li>
+      <li id="logout">logout</li>
+    </ul>
+  </nav>
+</header>
+<body ng-controller="MyController as ctrl">
+  <div class="section">
+
+    <form ng-submit="ctrl.addCity()">
+      <input type="text"
+      ng-model="ctrl.name" placeholder="name"/>
+      <input type="text"
+      ng-model="ctrl.image" placeholder="pics"/>
+      <textarea type="text"
+      ng-model="ctrl.description" placeholder="explain your love" rows="10" cols="80"/></textarea>
+
+      <input type="submit"
+      value="share that bihhh"/>
+    </form>
+
+    <div class="video-container">
+      <div class="color-overlay"></div>
+      <video autoplay loop muted>
+        <source src="assets/houston_skyline.mp4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+    <ul>
+      <li
+      ng-repeat="city in ctrl.cities">
+      <div class="bar"></div>
+      <div class="card">
+        <div class="sidebar"><img src="{{city.image}}" alt="image"></div>
+        <div class="text">
+
+            <h3>{{city.name}}</h3>
+            <h4>{{city.description}}</h4>
+            <a href="#" ng-click="ctrl.deleteCity(city)">
+              <i class='fas'>&#xf2ed;</i>
+            </a>
+            <a
+          ng-if="$index !== ctrl.indexOfEditFormToShow"
+          href="#"
+          ng-click="ctrl.indexOfEditFormToShow = $index">
+        <!-- <i class='fas fa-pen'> </i> -->
+          </a>
+          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);">
+            <input type="text"
+            ng-model="ctrl.updatedCityDescription" placeholder="description" />
+            <input type="submit" value="Update">
+          </form>
+          <!-- <a href="#"><i class="material-icons" class="heart">favorite</i></a> -->
+
+        </div>
+      </div>
+    </li>
+  </ul>
+
+</body>
+<footer>
+  <img src="assets/logo.png" alt="logo">
+  <ul>
+    <li>that guy</li>
+    <li>•</li>
+    <li>the better aaron</li>
+    <li>•</li>
+    <li>bug sniffah</li>
+  </ul>
+</footer>
+</html>

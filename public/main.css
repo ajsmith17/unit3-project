@@ -1,0 +1,259 @@
+:root {
+  --blue: #25363e;
+  --brown: #7e5535;
+  --beige: #a2774c;
+  --gold: #dcae56;
+  --cru: #fbe8bd;
+}
+
+/* =============HEADER============ */
+
+header {
+    background-color: var(--gold);
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+    opacity: .6;
+}
+header img {
+    height: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+    font-family: 'Oxygen';
+    transform: translate(517px);
+}
+
+header li a {
+    color: black;
+    text-decoration: none;
+}
+
+header li:hover {
+  border-bottom: 1px solid black;
+}
+
+#login {
+  transition: 0.3s;
+}
+
+#logout {
+  transition: 0.3s;
+}
+
+#login:hover {
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
+  opacity: 1;
+}
+
+#logout:hover {
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+/* =============VIDEO============ */
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+video {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  filter: blur(2px);
+  width: 100%;
+}
+
+.section form {
+  text-align: center;
+  font-size: 6rem;
+  font-family: "Oxygen";
+  padding: 20px;
+  margin: 15px;
+  z-index: 1;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  z-index: -1;
+
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--blue);
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+}
+
+/* =============INPUT============ */
+
+input[type="text"] {
+  width: 100%;
+  height: 20px;
+  background: var(--cru);
+  box-shadow: 2px 2px var(--blue);
+  font-family: 'Oxygen';
+  color: black;
+  border: 1px;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  outline: none;
+  margin-top: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 35px;
+  background: var(--cru);
+  box-shadow: 2px 2px var(--blue);
+  font-family: 'Oxygen';
+  color: black;
+  border: 0px;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  outline: none;
+  margin-top: 10px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 25px;
+  background: var(--cru);
+  box-shadow: 2px 2px var(--blue);
+  font-family: 'Oxygen';
+  color: #4f5b62;
+  border: 0px;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  color: var(--blue);
+  margin-top: 40px;
+  outline: none;
+}
+
+/* =============CARDS============ */
+
+.card {
+  width: 65%;
+  height: 100%;
+  margin: 50px auto;
+  display: flex;
+}
+.bar {
+  width: 85%;
+  margin: auto;
+  border-top: 2px solid var(--blue);
+}
+
+.sidebar {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.text {
+  width: 57%;
+  background-color: var(--cru);
+  border-radius: 0 10px 10px 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+h3 {
+  font-family: 'Oxygen';
+  font-weight: 400;
+  color: var(--blue);
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.8em;
+}
+h4 {
+  font-family: 'Oxygen';
+  font-weight: 400;
+  color: var(--blue);
+}
+
+li img {
+  width: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+i {
+  color: var(--blue);
+  font-size: 15px;
+  margin: 10px;
+
+}
+
+
+/* =============FOOTER============ */
+
+footer {
+  background-color: var(--gold);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  overflow: hidden;
+  box-shadow: 0 0 25px 0 black;
+  opacity: .6;
+}
+
+footer ul {
+    display: inline;
+    display: flex;
+    justify-content: center;
+}
+
+footer li {
+    margin: 12px;
+    font-size: 12px;
+    font-family: 'Oxygen'
+}
+
+footer img {
+    justify-content: center;
+    transform: translate(517px);
+    height: 35px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+footer li a {
+    color: black;
+    text-decoration: none;
+}
