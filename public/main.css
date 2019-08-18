@@ -5,6 +5,9 @@
   --gold: #dcae56;
   --cru: #fbe8bd;
 }
+
+/* =============HEADER============ */
+
 header {
     background-color: var(--gold);
     position: sticky;
@@ -30,7 +33,8 @@ header * {
 
 header li {
     margin: 20px;
-    font-family: 'Oxygen'
+    font-family: 'Oxygen';
+    transform: translate(517px);
 }
 
 header li a {
@@ -41,6 +45,27 @@ header li a {
 header li:hover {
   border-bottom: 1px solid black;
 }
+
+#login {
+  transition: 0.3s;
+}
+
+#logout {
+  transition: 0.3s;
+}
+
+#login:hover {
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
+  opacity: 1;
+}
+
+#logout:hover {
+  color: var(--blue);
+  border-bottom: 1px solid var(--blue);
+}
+
+/* =============VIDEO============ */
 
 .section {
   position: relative;
@@ -57,7 +82,7 @@ header li:hover {
 video {
   color: white;
   text-shadow: 2px 2px 4px #000000;
-  filter: blur(4px);
+  filter: blur(2px);
   width: 100%;
 }
 
@@ -89,11 +114,13 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  /* background-color: lightgrey; */
+  background-color: var(--blue);
   width: 100%;
   height: 100vh;
-  /* opacity: 0.5; */
+  opacity: 0.5;
 }
+
+/* =============INPUT============ */
 
 input[type="text"] {
   width: 100%;
@@ -138,6 +165,8 @@ input[type="submit"] {
   outline: none;
 }
 
+/* =============CARDS============ */
+
 .card {
   width: 65%;
   height: 100%;
@@ -181,6 +210,15 @@ li img {
   border-radius: 10px 0 0 10px;
 }
 
+i {
+  color: var(--blue);
+  font-size: 15px;
+  margin: 10px;
+
+}
+
+
+/* =============FOOTER============ */
 
 footer {
   background-color: var(--gold);
