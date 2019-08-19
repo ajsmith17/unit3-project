@@ -35,17 +35,15 @@
   </header>
   <div id="modal">
     <div id="modal-textbox">
-      <h2>Create User</h2>
         <form ng-submit="ctrl.createUser()">
-          <input type="text" ng-model="ctrl.createUsername" />
-          <input type="password" ng-model="ctrl.createPassword" />
+          <input type="text" ng-model="ctrl.createUsername" placeholder="username"/>
+          <input type="password" ng-model="ctrl.createPassword" placeholder="password"/>
           <input type="submit" value="Create User">
         </form>
-      <h2>Log In</h2>
-        <form ng-submit="ctrl.logIn()">
-          <input type="text" ng-model="ctrl.username">
+        <form ng-submit="ctrl.logIn()" >
+          <input type="text" ng-model="ctrl.username" placeholder="username">
           <input type="password" ng-model="ctrl.password">
-          <input type="submit" value="Log In">
+          <input type="submit" value="Log In" placeholder="password">
         </form>
       <div class="modal-footer">
         <a id="close" class="modal-buttons">Close</a>
