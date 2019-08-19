@@ -24,7 +24,7 @@ const PROJECT3_DB = process.env.PROJECT3_DB
 const citiesController = require('./controllers/cities.js');
 app.use('/cities', citiesController);
 // Error / success
-mongoose.connect('mongodb://localhost:27017/cities', {useNewUrlParser:true});
+mongoose.connect(PROJECT3_DB, {useNewUrlParser:true});
 mongoose.connection.once('open', () => {
   console.log('connected to mongoose...');
 })
