@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="MyApp">
+<html lang="en" dir="ltr" ng-app="MyApp" ng-controller="MyController as ctrl">
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="/js/app.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nunito|Oswald|Oxygen&display=swap" rel="stylesheet">
@@ -20,12 +21,35 @@
       <li>home</li>
       <li>about</li>
       <li>contact</li>
-      <li id="login">login</li>
-      <li id="logout">logout</li>
+      <li id="login" class="openModal">login</li>
+      <li id="logout">
+        <form ng-submit="ctrl.logOut()">
+          <input type="submit" value="logout">
+        </form>
+      </li>
     </ul>
   </nav>
+  <div id="modal">
+    <div id="modal-textbox">
+      <h2>Create User</h2>
+        <form ng-submit="ctrl.createUser()">
+          <input type="text" ng-model="ctrl.createUsername" />
+          <input type="password" ng-model="ctrl.createPassword" />
+          <input type="submit" value="Create User">
+        </form>
+      <h2>Log In</h2>
+        <form ng-submit="ctrl.logIn()">
+          <input type="text" ng-model="ctrl.username">
+          <input type="password" ng-model="ctrl.password">
+          <input type="submit" value="Log In">
+        </form>
+      <div class="modal-footer">
+        <a id="close" class="modal-buttons">Close</a>
+      </div>
+    </div>
+  </div>
 </header>
-<body ng-controller="MyController as ctrl">
+<body>
   <div class="section">
 
     <form ng-submit="ctrl.addCity()">
