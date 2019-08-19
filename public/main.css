@@ -80,7 +80,7 @@ header li:hover {
 }
 
 #modal-textbox {
-  background: radial-gradient(var(--beige), var(--cru));
+  background: radial-gradient(var(--gold), var(--cru));
 	height: 370px;
 	width: 550px;
 	border-radius: 2px;
@@ -89,7 +89,7 @@ header li:hover {
 	padding: 2%;
 	line-height: 120%;
   border-radius: 10px;
-  opacity: .7;
+  opacity: .8;
 }
 
 .modal-footer {
@@ -105,7 +105,7 @@ header li:hover {
   border-radius: 10px;
 	outline: none;
 	border-radius: 7px;
-	color: var(--gold);
+	color: var(--cru);
 	cursor: pointer;
   transform: translate(0px 30px);
 
@@ -166,9 +166,28 @@ video {
   opacity: 0.5;
 }
 
+.section img {
+  height: 20%;
+  opacity: .5;
+}
+
 /* =============INPUT============ */
 
 input[type="text"] {
+  width: 100%;
+  height: 20px;
+  background: var(--cru);
+  box-shadow: 2px 2px var(--blue);
+  font-family: 'Oxygen';
+  color: black;
+  border: 1px;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  outline: none;
+  margin-top: 10px;
+}
+
+input[type="password"] {
   width: 100%;
   height: 20px;
   background: var(--cru);
@@ -208,6 +227,7 @@ input[type="submit"] {
   border-radius: 8px;
   color: var(--blue);
   margin-top: 40px;
+  margin-bottom: 40px;
   outline: none;
 }
 
