@@ -108,6 +108,7 @@ header li:hover {
 	color: var(--cru);
 	cursor: pointer;
   transform: translate(0px 30px);
+  font-family: 'Oxygen';
 
 }
 
@@ -168,7 +169,7 @@ video {
 
 .section img {
   height: 20%;
-  opacity: .5;
+  opacity: .8;
 }
 
 /* =============INPUT============ */
