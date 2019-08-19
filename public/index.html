@@ -51,8 +51,8 @@
     </div>
   </div>
   <div class="section">
-    <img src="assets/logo.png" alt="logo">
-    <form ng-submit="ctrl.addCity()" ng-if="auth.loggedInUsername">
+    <img src="assets/logo.png" alt="logo" ng-if="!ctrl.loggedInUsername">
+    <form ng-submit="ctrl.addCity()" ng-if="ctrl.loggedInUsername">
       <input type="text"
       ng-model="ctrl.name" placeholder="name"/>
       <input type="text"
@@ -82,16 +82,16 @@
 
             <h3>{{city.name}}</h3>
             <h4>{{city.description}}</h4>
-            <a href="#" ng-click="ctrl.deleteCity(city)" ng-if="auth.loggedInUsername">
+            <a href="#" ng-click="ctrl.deleteCity(city)" ng-if="ctrl.loggedInUsername">
               <i class='fas'>&#xf2ed;</i>
             </a>
-            <a ng-if="auth.loggedInUsername"
+            <a ng-if="ctrl.loggedInUsername"
           ng-if="$index !== ctrl.indexOfEditFormToShow"
           href="#"
           ng-click="ctrl.indexOfEditFormToShow = $index" >
         <i class='fas fa-pen'> </i>
           </a>
-          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);" ng-if="auth.loggedInUsername">
+          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);" ng-if="ctrl.loggedInUsername">
             <input type="text"
             ng-model="ctrl.updatedCityDescription" placeholder="description" />
             <input type="submit" value="Update">
