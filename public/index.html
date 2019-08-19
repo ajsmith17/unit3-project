@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="MyApp">
+<html lang="en" dir="ltr" ng-app="MyApp" ng-controller="MyController as ctrl">
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="/js/app.js" charset="utf-8"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nunito|Oswald|Oxygen&display=swap" rel="stylesheet">
@@ -13,19 +14,44 @@
   <meta charset="utf-8">
   <title></title>
 </head>
-<header>
-  <img src="assets/logo.png" alt="logo">
-  <nav>
-    <ul>
-      <li>home</li>
-      <li>about</li>
-      <li>contact</li>
-      <li id="login">login</li>
-      <li id="logout">logout</li>
-    </ul>
-  </nav>
-</header>
-<body ng-controller="MyController as ctrl">
+
+<body>
+  <header>
+    <img src="assets/logo.png" alt="logo">
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+        <li id="login" class="openModal">login</li>
+        <li id="logout" ng-click="ctrl.logOut()">logout
+          <!-- <form ng-submit="ctrl.logOut()">
+            <input type="submit" value="logout">
+          </form> -->
+        </li>
+      </ul>
+    </nav>
+
+  </header>
+  <div id="modal">
+    <div id="modal-textbox">
+      <h2>Create User</h2>
+        <form ng-submit="ctrl.createUser()">
+          <input type="text" ng-model="ctrl.createUsername" />
+          <input type="password" ng-model="ctrl.createPassword" />
+          <input type="submit" value="Create User">
+        </form>
+      <h2>Log In</h2>
+        <form ng-submit="ctrl.logIn()">
+          <input type="text" ng-model="ctrl.username">
+          <input type="password" ng-model="ctrl.password">
+          <input type="submit" value="Log In">
+        </form>
+      <div class="modal-footer">
+        <a id="close" class="modal-buttons">Close</a>
+      </div>
+    </div>
+  </div>
   <div class="section">
     <form ng-submit="ctrl.addCity()">
       <input type="text"
@@ -36,13 +62,13 @@
       ng-model="ctrl.description" placeholder="explain your love" rows="10" cols="80"/></textarea>
 
       <input type="submit"
-      value="share that bihhh"/>
+      value="share"/>
     </form>
 
     <div class="video-container">
       <div class="color-overlay"></div>
       <video autoplay loop muted>
-        <source src="assets/houston_skyline.mp4.mp4" type="video/mp4">
+        <source src="assets/skyline.mp4" type="video/mp4">
         </video>
       </div>
 
@@ -64,7 +90,7 @@
           ng-if="$index !== ctrl.indexOfEditFormToShow"
           href="#"
           ng-click="ctrl.indexOfEditFormToShow = $index">
-        <!-- <i class='fas fa-pen'> </i> -->
+        <i class='fas fa-pen'> </i>
           </a>
           <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);">
             <input type="text"
@@ -82,11 +108,11 @@
 <footer>
   <img src="assets/logo.png" alt="logo">
   <ul>
-    <li>that guy</li>
+    <li>aaron</li>
     <li>•</li>
-    <li>the better aaron</li>
+    <li>orlando</li>
     <li>•</li>
-    <li>bug sniffah</li>
+    <li>mason</li>
   </ul>
 </footer>
 </html>
