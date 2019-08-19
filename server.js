@@ -4,6 +4,7 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const app = express ();
+const session = require('express-session');
 const dotenv = require('dotenv');
 const db = mongoose.connection;
 //___________________
@@ -15,7 +16,14 @@ const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 console.log(dotenv);
+
 app.use(express.json());
+
+app.use(session({
+  secret: 'digdeep',
+  resave: false,
+  saveUninitialized: false
+}));
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
@@ -23,6 +31,10 @@ const PROJECT3_DB = process.env.PROJECT3_DB
 
 const citiesController = require('./controllers/cities.js');
 app.use('/cities', citiesController);
+const userController = require('./controllers/users.js');
+app.use('/users', userController);
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController);
 // Error / success
 mongoose.connect(PROJECT3_DB, {useNewUrlParser:true});
 mongoose.connection.once('open', () => {
