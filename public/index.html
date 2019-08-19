@@ -14,21 +14,25 @@
   <meta charset="utf-8">
   <title></title>
 </head>
-<header>
-  <img src="assets/logo.png" alt="logo">
-  <nav>
-    <ul>
-      <li>home</li>
-      <li>about</li>
-      <li>contact</li>
-      <li id="login" class="openModal">login</li>
-      <li id="logout">
-        <form ng-submit="ctrl.logOut()">
-          <input type="submit" value="logout">
-        </form>
-      </li>
-    </ul>
-  </nav>
+
+<body>
+  <header>
+    <img src="assets/logo.png" alt="logo">
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>contact</li>
+        <li id="login" class="openModal">login</li>
+        <li id="logout" ng-click="ctrl.logOut()">logout
+          <!-- <form ng-submit="ctrl.logOut()">
+            <input type="submit" value="logout">
+          </form> -->
+        </li>
+      </ul>
+    </nav>
+
+  </header>
   <div id="modal">
     <div id="modal-textbox">
       <h2>Create User</h2>
@@ -48,8 +52,6 @@
       </div>
     </div>
   </div>
-</header>
-<body>
   <div class="section">
 
     <form ng-submit="ctrl.addCity()">

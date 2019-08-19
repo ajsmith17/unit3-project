@@ -4,6 +4,7 @@
 const express = require('express');
 const mongoose = require ('mongoose');
 const app = express ();
+const dotenv = require('dotenv');
 const db = mongoose.connection;
 //___________________
 //Port
@@ -12,7 +13,8 @@ const db = mongoose.connection;
 const PORT = process.env.PORT || 3000;
 
 
-
+dotenv.config();
+console.log(dotenv);
 app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
