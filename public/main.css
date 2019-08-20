@@ -131,12 +131,12 @@ header li:hover {
   justify-content: center;
   overflow: hidden;
   color: white;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px var(--blue);
 }
 
 video {
   color: white;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px var(--blue);
   /* filter: blur(2px); */
   width: 100%;
 }
@@ -160,9 +160,8 @@ video {
   left: 0;
   width: 100%;
   color: white;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 2px 2px 4px var(--blue);
   z-index: -1;
-
 }
 
 .color-overlay {
@@ -173,6 +172,7 @@ video {
   width: 100%;
   height: 100vh;
   opacity: 0.5;
+  filter: blur(4px;);
 }
 
 .section img {
