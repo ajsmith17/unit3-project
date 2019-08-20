@@ -65,6 +65,10 @@ header li:hover {
   border-bottom: 1px solid var(--blue);
 }
 
+#welcome {
+  transform: translate(200px);
+}
+
 /* =============MODAL============ */
 
 #modal {
