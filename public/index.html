@@ -24,16 +24,13 @@
         <li>about</li>
         <li>contact</li>
         <li id="login" class="openModal">login</li>
-        <li id="logout" ng-click="ctrl.logOut()">logout
-          <!-- <form ng-submit="ctrl.logOut()">
-            <input type="submit" value="logout">
-          </form> -->
-        </li>
+        <li id="logout" ng-click="ctrl.logOut()">logout</li>
+        <li ng-if="ctrl.loggedInUsername" id="welcome">Welcome,  {{ctrl.loggedInUsername}}!</li>
       </ul>
     </nav>
 
   </header>
-  <div id="modal">
+  <div ng-if="!ctrl.loggedInUsername" id="modal">
     <div id="modal-textbox">
         <form ng-submit="ctrl.createUser()">
           <input type="text" ng-model="ctrl.createUsername" placeholder="username"/>
