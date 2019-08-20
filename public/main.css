@@ -130,7 +130,7 @@ header li:hover {
 video {
   color: white;
   text-shadow: 2px 2px 4px #000000;
-  filter: blur(2px);
+  /* filter: blur(2px); */
   width: 100%;
 }
 
