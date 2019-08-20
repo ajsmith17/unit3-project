@@ -42,8 +42,8 @@
         </form>
         <form ng-submit="ctrl.logIn()" >
           <input type="text" ng-model="ctrl.username" placeholder="username">
-          <input type="password" ng-model="ctrl.password">
-          <input type="submit" value="Log In" placeholder="password">
+          <input type="password" ng-model="ctrl.password" placeholder="password">
+          <input type="submit" value="Log In" >
         </form>
       <div class="modal-footer">
         <a id="close" class="modal-buttons">Close</a>
@@ -51,7 +51,8 @@
     </div>
   </div>
   <div class="section">
-    <form ng-submit="ctrl.addCity()">
+    <img src="assets/logo.png" alt="logo">
+    <form ng-submit="ctrl.addCity()" ng-if="auth.loggedInUsername">
       <input type="text"
       ng-model="ctrl.name" placeholder="name"/>
       <input type="text"
@@ -71,9 +72,13 @@
       </div>
 
     </div>
+    <div class="search">
+      <h2>Search</h2>
+      <input type="text" ng-model="searchBar"/>
+    </div>
     <ul>
       <li
-      ng-repeat="city in ctrl.cities">
+      ng-repeat="city in ctrl.cities | filter: searchBar">
       <div class="bar"></div>
       <div class="card">
         <div class="sidebar"><img src="{{city.image}}" alt="image"></div>
@@ -81,16 +86,16 @@
 
             <h3>{{city.name}}</h3>
             <h4>{{city.description}}</h4>
-            <a href="#" ng-click="ctrl.deleteCity(city)">
+            <a href="#" ng-click="ctrl.deleteCity(city)" ng-if="auth.loggedInUsername">
               <i class='fas'>&#xf2ed;</i>
             </a>
-            <a
+            <a ng-if="auth.loggedInUsername"
           ng-if="$index !== ctrl.indexOfEditFormToShow"
           href="#"
-          ng-click="ctrl.indexOfEditFormToShow = $index">
+          ng-click="ctrl.indexOfEditFormToShow = $index" >
         <i class='fas fa-pen'> </i>
           </a>
-          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);">
+          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);" ng-if="auth.loggedInUsername">
             <input type="text"
             ng-model="ctrl.updatedCityDescription" placeholder="description" />
             <input type="submit" value="Update">
@@ -101,7 +106,6 @@
       </div>
     </li>
   </ul>
-
 </body>
 <footer>
   <img src="assets/logo.png" alt="logo">
