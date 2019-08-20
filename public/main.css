@@ -11,6 +11,7 @@
 header {
     background-color: var(--gold);
     position: sticky;
+    z-index: 2;
     top: 0;
     left: 0;
     right: 0;
@@ -80,14 +81,16 @@ header li:hover {
 }
 
 #modal-textbox {
-  background: radial-gradient(#4d5052, #262829);
-	height: 270px;
+  background: radial-gradient(var(--gold), var(--cru));
+	height: 370px;
 	width: 550px;
 	border-radius: 2px;
 	margin: 150px auto;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 	padding: 2%;
 	line-height: 120%;
+  border-radius: 10px;
+  opacity: .8;
 }
 
 .modal-footer {
@@ -96,18 +99,18 @@ header li:hover {
 
 .modal-buttons {
 	padding: 14px 18px;
-	background-color: red;
+	background-color: var(--blue);
   font-size: 15px;
   font-weight: bold;
-	border: 2px solid white;
+	border: 2px solid var(--cru);
+  border-radius: 10px;
 	outline: none;
 	border-radius: 7px;
-	color: white;
+	color: var(--cru);
 	cursor: pointer;
-}
+  transform: translate(0px 30px);
+  font-family: 'Oxygen';
 
-.modal-buttons:hover {
-  background-color: #bf0000;
 }
 
 /* =============VIDEO============ */
@@ -165,9 +168,30 @@ video {
   opacity: 0.5;
 }
 
+.section img {
+  height: 20%;
+  opacity: .8;
+}
+
 /* =============INPUT============ */
 
 input[type="text"] {
+  width: 100%;
+  height: 20px;
+  background: var(--cru);
+  box-shadow: 2px 2px var(--blue);
+  font-family: 'Oxygen';
+  font-size: 10px;
+  color: black;
+  border: 1px;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  outline: none;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+input[type="password"] {
   width: 100%;
   height: 20px;
   background: var(--cru);
@@ -179,6 +203,7 @@ input[type="text"] {
   border-radius: 8px;
   outline: none;
   margin-top: 10px;
+  font-size: 12px;
 }
 
 textarea {
@@ -193,6 +218,7 @@ textarea {
   border-radius: 8px;
   outline: none;
   margin-top: 10px;
+  font-size: 12px;
 }
 
 input[type="submit"] {
@@ -201,13 +227,42 @@ input[type="submit"] {
   background: var(--cru);
   box-shadow: 2px 2px var(--blue);
   font-family: 'Oxygen';
-  color: #4f5b62;
+  font-size: 17px;
   border: 0px;
   transition: 0.2s ease-in-out;
   border-radius: 8px;
   color: var(--blue);
   margin-top: 40px;
+  margin-bottom: 40px;
   outline: none;
+}
+
+.search {
+  transform: translate(265px);
+}
+
+label {
+  font-family: 'Oxygen';
+  font-weight: 400;
+  color: var(--blue);
+  font-size: 1.1em;
+}
+
+.search input[type="text"] {
+  width: 40%;
+  height: 25px;
+  background: var(--cru);
+  box-shadow: 2px 2px var(--blue);
+  font-family: 'Oxygen';
+  font-size: 17px;
+  border: 0px;
+  transition: 0.2s ease-in-out;
+  border-radius: 8px;
+  color: var(--blue);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  outline: none;
+  opacity: .8;
 }
 
 /* =============CARDS============ */
@@ -251,6 +306,7 @@ h4 {
   color: var(--blue);
   font-size: 1.1em;
   margin-top: 20px;
+  line-height: 1.6;
 }
 
 li img {
