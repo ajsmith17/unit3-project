@@ -24,28 +24,23 @@
         <li>about</li>
         <li>contact</li>
         <li id="login" class="openModal">login</li>
-        <li id="logout" ng-click="ctrl.logOut()">logout
-          <!-- <form ng-submit="ctrl.logOut()">
-            <input type="submit" value="logout">
-          </form> -->
-        </li>
+        <li id="logout" ng-click="ctrl.logOut()">logout</li>
+        <li ng-if="ctrl.loggedInUsername" id="welcome">Welcome,  {{ctrl.loggedInUsername}}!</li>
       </ul>
     </nav>
 
   </header>
-  <div id="modal">
+  <div ng-if="!ctrl.loggedInUsername" id="modal">
     <div id="modal-textbox">
-      <h2>Create User</h2>
         <form ng-submit="ctrl.createUser()">
-          <input type="text" ng-model="ctrl.createUsername" />
-          <input type="password" ng-model="ctrl.createPassword" />
+          <input type="text" ng-model="ctrl.createUsername" placeholder="username"/>
+          <input type="password" ng-model="ctrl.createPassword" placeholder="password"/>
           <input type="submit" value="Create User">
         </form>
-      <h2>Log In</h2>
-        <form ng-submit="ctrl.logIn()">
-          <input type="text" ng-model="ctrl.username">
-          <input type="password" ng-model="ctrl.password">
-          <input type="submit" value="Log In">
+        <form ng-submit="ctrl.logIn()" >
+          <input type="text" ng-model="ctrl.username" placeholder="username">
+          <input type="password" ng-model="ctrl.password" placeholder="password">
+          <input type="submit" value="Log In" >
         </form>
       <div class="modal-footer">
         <a id="close" class="modal-buttons">Close</a>
@@ -53,8 +48,8 @@
     </div>
   </div>
   <div class="section">
-
-    <form ng-submit="ctrl.addCity()">
+    <img src="assets/logo.png" alt="logo" ng-if="!ctrl.loggedInUsername">
+    <form ng-submit="ctrl.addCity()" ng-if="ctrl.loggedInUsername">
       <input type="text"
       ng-model="ctrl.name" placeholder="name"/>
       <input type="text"
@@ -74,9 +69,13 @@
       </div>
 
     </div>
+    <div class="search">
+      <label>Find A City By Name: </label>
+      <input type="text" ng-model="searchBar"/>
+    </div>
     <ul>
       <li
-      ng-repeat="city in ctrl.cities">
+      ng-repeat="city in ctrl.cities | filter: searchBar">
       <div class="bar"></div>
       <div class="card">
         <div class="sidebar"><img src="{{city.image}}" alt="image"></div>
@@ -84,16 +83,16 @@
 
             <h3>{{city.name}}</h3>
             <h4>{{city.description}}</h4>
-            <a href="#" ng-click="ctrl.deleteCity(city)">
+            <a href="#" ng-click="ctrl.deleteCity(city)" ng-if="ctrl.loggedInUsername">
               <i class='fas'>&#xf2ed;</i>
             </a>
-            <a
+            <a ng-if="ctrl.loggedInUsername"
           ng-if="$index !== ctrl.indexOfEditFormToShow"
           href="#"
-          ng-click="ctrl.indexOfEditFormToShow = $index">
+          ng-click="ctrl.indexOfEditFormToShow = $index" >
         <i class='fas fa-pen'> </i>
           </a>
-          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);">
+          <form ng-if="$index === ctrl.indexOfEditFormToShow" ng-submit="ctrl.editCity(city);" ng-if="ctrl.loggedInUsername">
             <input type="text"
             ng-model="ctrl.updatedCityDescription" placeholder="description" />
             <input type="submit" value="Update">
@@ -104,7 +103,6 @@
       </div>
     </li>
   </ul>
-
 </body>
 <footer>
   <img src="assets/logo.png" alt="logo">
