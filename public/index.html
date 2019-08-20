@@ -72,9 +72,13 @@
       </div>
 
     </div>
+    <div class="search">
+      <label>Find A City By Name: </label>
+      <input type="text" ng-model="searchBar"/>
+    </div>
     <ul>
       <li
-      ng-repeat="city in ctrl.cities">
+      ng-repeat="city in ctrl.cities | filter: searchBar">
       <div class="bar"></div>
       <div class="card">
         <div class="sidebar"><img src="{{city.image}}" alt="image"></div>
@@ -102,7 +106,6 @@
       </div>
     </li>
   </ul>
-
 </body>
 <footer>
   <img src="assets/logo.png" alt="logo">
