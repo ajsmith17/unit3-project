@@ -32,7 +32,8 @@ app.controller('MyController', ['$http', function($http){
       }
     }).then(function(response){
         console.log(response);
-        controller.goApp();
+        controller.loggedInUsername = response.data.username;
+        // controller.goApp();
         // console.log(controller.data.username);
         controller.username = null;
         controller.password = null;
@@ -53,17 +54,17 @@ app.controller('MyController', ['$http', function($http){
     });
   }
   //
-  this.goApp = function(){
-    $http({
-        method:'GET',
-        url: '/app'
-    }).then(function(response){
-        controller.loggedInUsername = response.data.username;
-    }, function(error){
-        console.log('error');
-        console.log(error);
-    });
-  };
+  // this.goApp = function(){
+  //   $http({
+  //       method:'GET',
+  //       url: '/'
+  //   }).then(function(response){
+  //       // controller.loggedInUsername = response.data.username;
+  //   }, function(error){
+  //       console.log('error');
+  //       console.log(error);
+  //   });
+  // };
   // =====================
   //      Cities
   // =====================
